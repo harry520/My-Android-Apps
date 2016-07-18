@@ -1,0 +1,76 @@
+package com.example.drupalappdemo;
+
+import java.net.URL;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
+public class LoginActivity extends Activity {
+
+	String session_name, session_id;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
+	}
+	
+	private class doLogin extends AsyncTask<String, Integer, Integer> {
+
+		protected Integer doInBackground(String... params) {
+			HttpClient httpClient = new DefaultHttpClient();
+			HttpPost httpPost = new HttpPost("http://ec2-54-244-72-198.us-west-2.compute.amazonaws.com/cmac/rest/user/login");
+				try {
+					EditText username = (EditText) findViewById(R.id.editUsername);
+					EditText password = (EditText) findViewById(R.id.editPassword);
+					JSONObject json = new JSONObject();
+					json.put("username", username.getText().toString().trim());
+					json.put("password", password.getText().toString().trim());
+					StringEntity se = new StringEntity(json.toString());
+					se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+					httpPost.setEntity(se);
+					HttpResponse response = httpClient.execute(httpPost);
+					String jsonResponse = EntityUtils.toString(response.getEntity());
+					JSONObject jsonObj = new JSONObject(jsonResponse);
+					session_name = jsonObj.getString("session_name");
+					session_id = jsonObj.getString("sessid");
+					
+				} catch (Exception e) {
+					Log.v("Error logging in: ", e.getMessage());
+				}
+			return 0;
+		}
+		
+		protected void onPostExecute(Integer result) {
+		Intent intent = new Intent(LoginActivity.this, ListActivity.class);
+		}		
+	}
+	
+	public void doLoginButton_click(View view) {
+		new doLogin.execute();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.login, menu);
+		return true;
+	}
+	
+}

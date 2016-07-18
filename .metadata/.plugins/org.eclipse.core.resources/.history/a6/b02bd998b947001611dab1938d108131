@@ -1,0 +1,60 @@
+package com.example.restfulwebservicedemo;
+
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		Button getData = (Button) findViewById(R.id.getServiceData);
+		getData.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				String restURL = "http://www.androidexample.com/webservice/data/JSONReturn.php";
+				new RESTOperation().execute(restURL);
+			}
+		});
+	}
+
+	private class RESTOperation extends AsyncTask<String, Void, Void> {
+
+		@SuppressWarnings("deprecation")
+		final HttpClient httpClient = new DefaultHttpClient();
+		String content, error, data;
+		ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+		TextView serverDataReceived = (TextView) findViewById(R.id.serverDataReceived);		
+		TextView showParsedJSON = (TextView) findViewById(R.id.showParsedJSON);		
+		
+		
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+		
+		@Override
+		protected Void doInBackground(String... params) {
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			super.onPostExecute(result);
+		}
+
+}

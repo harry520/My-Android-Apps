@@ -1,0 +1,42 @@
+package com.example.jsonexample;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+
+public class MyActivity extends Activity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_activity);
+		String a = "Name: Ramkumar-Mark: Eng: 1243, Tamil: 245, Phy: 11200-Sub: Math-Status: Pass";
+		String[] array = a.split("-");
+		for (int i = 0; i < array.length; i++) {
+			Log.w("APP", array[i]);
+			String b = array[i];
+			String[] arr = b.split(": ");
+			for (int j = 0; j < arr.length; j++) {
+				Log.w("VALUES", arr[j]);
+			}
+		}
+		String ja = "{\"Name\": \"Ramkumr\",\"Mark\": {\"PHY\": 123, \"MATH\": 167, \"CHE\": 156}, \"Sub\": \"Math\",\"Status\": \"Pass\"}";
+		try {
+			JSONObject jsonObject = new JSONObject(ja);
+			Log.w("VALUES_JSON", jsonObject.getString("Name"));
+			Log.w("VALUES_JSON", jsonObject.getString("Mark"));
+			JSONObject markJsonObject = jsonObject.getJSONObject("Mark");
+			Log.w("PHY", markJsonObject.getInt("PHY") + "");
+			Log.w("CHE", markJsonObject.getInt("CHE") + "");
+			Log.w("MATH", jsonObject.getInt("MATH") + "");
+			Log.w("VALUES_JSON", jsonObject.getString("Sub"));
+			Log.w("VALUES_JSON", jsonObject.getString("Status"));
+					} catch (JSONException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

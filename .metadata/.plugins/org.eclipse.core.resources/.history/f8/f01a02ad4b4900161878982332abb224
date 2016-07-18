@@ -1,0 +1,6 @@
+package com.example.jsonexample;
+
+public class MyActivity extends Activity {
+	
+
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExpListView</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="header_titles">
+        <item>Action Movies</item>
+        <item>Horror Movies</item>
+        <item>Romantic Movies</item>
+    </string-array>
+    <string-array name="h1_items">
+        <item>Minority Report</item>
+        <item>The Bourne Ultimatum</item>
+        <item>The Dark Knight</item>
+    </string-array>
+    <string-array name="h2_items">
+        <item>Insidious Chapter 3</item>
+        <item>It Follows</item>
+        <item>We Are Still Here</item>
+    </string-array>
+    <string-array name="h3_items">
+        <item>Fifty Shades of Gray</item>
+        <item>The Age of Adaline</item>
+        <item>Titanic</item>
+    </string-array>
+
+</resources>
