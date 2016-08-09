@@ -42,7 +42,7 @@ public class GPSTracker extends Service implements LocationListener {
 				if (locationManager != null) {
 					location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 					if (location != null) {
-						latitude = location.getLongitude();
+						latitude = location.getLatitude();
 						longitude = location.getLongitude();
 					}
 				}
@@ -87,7 +87,7 @@ public class GPSTracker extends Service implements LocationListener {
 
 	public void showSettingsAlert() {
 		AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-		alertDialog.setTitle("GPS is settings");
+		alertDialog.setTitle("GPS Settings");
 		alertDialog.setMessage("GPS is not enabled. Do you want to go to settings menu?");
 		alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
 
