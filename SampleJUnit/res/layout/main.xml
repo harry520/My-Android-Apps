@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/Pounds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Convert to Pounds" />
+
+    <EditText
+        android:id="@+id/inputvalueK"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/Pounds"
+        android:hint="No. of Kilos" />
+
+    <Button
+        android:id="@+id/Kilos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Pounds"
+        android:text="Convert to Kilos" />
+
+    <EditText
+        android:id="@+id/inputvalueP"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Pounds"
+        android:layout_toLeftOf="@id/Kilos"
+        android:hint="No. of Pounds" />
+
+    <TextView
+        android:id="@+id/resultview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Kilos"
+        android:text="Result  " />
+
+</RelativeLayout>
