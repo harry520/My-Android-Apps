@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="#8F3A1E"
+    tools:context="com.example.harryjiang.fragment.FragmentOne">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Welcome to Fragment One"
+        android:textAppearance="?android:textAppearanceLarge" />
+</FrameLayout>

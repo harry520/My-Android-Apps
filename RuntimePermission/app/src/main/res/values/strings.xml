@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Runtime Permission</string>
+    <string name="msg">Please enable all permissions.</string>
+</resources>

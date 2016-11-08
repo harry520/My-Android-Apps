@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99CC00"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.harryjiang.intentstest.MainActivity">
+
+    <Button
+        android:id="@+id/launchMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFCC00"
+        android:onClick="process"
+        android:text="@string/launch_map" />
+
+    <Button
+        android:id="@+id/launchMarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/launchMap"
+        android:layout_alignStart="@+id/launchMap"
+        android:layout_below="@+id/launchMap"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFCC00"
+        android:onClick="process"
+        android:text="@string/launch_market" />
+
+    <Button
+        android:id="@+id/sendEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/launchMarket"
+        android:layout_alignStart="@+id/launchMarket"
+        android:layout_below="@+id/launchMarket"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFCC00"
+        android:onClick="process"
+        android:text="@string/send_email" />
+
+    <Button
+        android:id="@+id/sendImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sendEmail"
+        android:layout_alignStart="@+id/sendEmail"
+        android:layout_below="@+id/sendEmail"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFCC00"
+        android:onClick="process"
+        android:text="@string/send_image" />
+
+    <Button
+        android:id="@+id/sendImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/sendImage"
+        android:layout_alignStart="@+id/sendImage"
+        android:layout_below="@+id/sendImage"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#FFCC00"
+        android:onClick="process"
+        android:text="@string/send_images" />
+</RelativeLayout>

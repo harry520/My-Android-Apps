@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cont_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="4dp">
+
+        <RelativeLayout
+            android:id="@+id/cont_card_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF">
+
+            <ImageView
+                android:id="@+id/im_item_icon"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                android:background="@color/colorPrimary"
+                android:padding="36dp"
+                android:src="@drawable/ic_tonality_black_36dp"
+                android:tint="#FFFFFF"
+
+                />
+
+            <TextView
+                android:id="@+id/lbl_item_sub_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/lbl_item_text"
+                android:paddingLeft="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lbl_item_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/im_item_icon"
+                android:paddingLeft="16dp" />
+
+
+            <Button
+                android:id="@+id/btn_card_load"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_below="@+id/lbl_item_text"
+                android:background="@android:color/transparent"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:text="LOAD"
+                android:textColor="@color/colorAccent" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Sliding Menu Demo</string>
+    <string name="drawer_opened">Opened</string>
+    <string name="drawer_closed">Closed</string>
+</resources>

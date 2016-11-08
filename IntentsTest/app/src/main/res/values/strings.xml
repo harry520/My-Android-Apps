@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Intents Test</string>
+    <string name = "launch_map">Launch Map</string>
+    <string name = "launch_market">Launch Market</string>
+    <string name = "send_email">Send Email</string>
+    <string name = "send_image">Send Image</string>
+    <string name = "send_images">Send Images</string>
+</resources>
