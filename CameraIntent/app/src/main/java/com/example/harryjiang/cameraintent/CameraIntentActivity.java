@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -67,7 +68,9 @@ public class CameraIntentActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        callCameraApplicationIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(photoFile));
+        String authorities = getApplicationContext().getPackageName() + ".file_provider";
+        Uri imageUri = FileProvider.getUriForFile(this, authorities, photoFile);
+        callCameraApplicationIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(callCameraApplicationIntent, ACTIVITY_START_CAMERA_APP);
     }
 
